@@ -1,0 +1,14 @@
+{
+    "name": "koa-app",
+    "private": true,
+    "version": "0.0.1",
+    "description": "koa-app based on node.js",
+    "keywords": "koa, nodejs",
+    "scripts": {
+        
+    },
+    "license": "MIT",
+    "repository": "https://github.com/springxiege/koa-app.git",
+    "dependencies": {},
+    "devDependencies": {}
+}
