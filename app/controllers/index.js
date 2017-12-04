@@ -1,18 +1,21 @@
+// var mongoose = require('mongoose')
+const Homepages = require('../modals/homepages');
+const Advantage = require('../modals/advantage');
+
+
 exports.index = async (ctx, next) => {
-    const advantage = [
-        '四年以上Web前端开发的相关经验',
-        '熟悉WEB开发相关的Html5、JavaScript、Ajax、DIV+CSS、JQuery等常用语言',
-        '良好的沟通与表达能力、思路清晰，较强的动手能力与逻辑分析能力',
-        '有解决问题和钻研新技术的兴趣和能力。喜欢挑战新技术和挑战自我',
-        '能使用react相关技术搭建spa应用',
-        '能使用vue构建项目'
-    ];
-    const homepages = [
-        { title: '我的主页', url: 'http://www.blacklove.cn'},
-        { title: '我的github地址', url: 'http://www.github.com/springxiege'},
-        { title: '我的个人博客地址(github)', url: 'http://springxiege.github.io'},
-        { title: '我的个人博客地址(oschina)', url: 'http://springxiege.gitee.io'}
-    ];
+    const homepagesData = await Homepages.fetch(function (err, homepages) {
+        if (err) {
+            console.log(err)
+        }
+        return homepages;
+    });
+    const advantageData = await Advantage.fetch((err, advantage) => {
+        if(err){
+            console.error(err);
+        }
+        return advantage;
+    });
     const experience = [
         { title: '杭州十禾信息科技有限公司', content: '', stayed: '2016.11-至今'},
         { title: '杭州可乐视媒网络技术有限公司', content: '', stayed: '2015.10-2016.10'},
@@ -34,8 +37,8 @@ exports.index = async (ctx, next) => {
     ];
     await ctx.render('index', {
         title: '关于我 About Me',
-        advantage,
-        homepages,
+        advantage: advantageData,
+        homepages: homepagesData,
         experience,
         projects
     })

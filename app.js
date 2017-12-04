@@ -8,7 +8,16 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const path = require('path');
 const routesConfig = require('./routesConfig');
+const mongoose = require('mongoose');
 
+// connect db 
+const dbUrl = 'mongodb://localhost/resume'
+mongoose.connect(dbUrl)
+var db = mongoose.connection
+db.on('error', console.error.bind(console, '连接错误:'));
+db.once('open', function () {
+  console.log('连接成功');
+})
 // error handler
 onerror(app)
 
