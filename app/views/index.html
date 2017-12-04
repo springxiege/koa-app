@@ -25,9 +25,9 @@
 <h3>工作经历</h3>
 <div>
     <ol>
-        {% for item in experience -%}
-        <li>{{item.title}}
-            <small>{{item.stayed}}</small>
+        {% for item in experiences -%}
+        <li data-content="{{item.content}}">{{item.title}}
+            <small>{{ item.stayed }}</small>
         </li>
         {%- else %}
         <li>暂未填写</li>
