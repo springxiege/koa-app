@@ -7,8 +7,7 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const path = require('path');
-const index = require('./routes/index')
-const users = require('./routes/users')
+const routesConfig = require('./routesConfig');
 
 // error handler
 onerror(app)
@@ -22,7 +21,7 @@ app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
 app.use(koaNunjucks({
   ext: 'html',
-  path: path.join(__dirname, 'views'),
+  path: path.join(__dirname, 'app/views'),
   nunjucksConfig: {
     trimBlocks: true
   }
@@ -40,8 +39,7 @@ app.use(async (ctx, next) => {
 })
 
 // routes
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
+routesConfig(app);
 
 // error-handling
 app.on('error', (err, ctx) => {
