@@ -9,21 +9,21 @@ exports.index = async (ctx, next) => {
         if (err) {
             console.log(err)
         }
-        return homepages;
+        return homepages || [];
     });
     const advantageData = await Advantage.fetch((err, advantage) => {
         if(err){
             console.error(err);
         }
-        return advantage;
+        return advantage || [];
     });
     const experiencesData = await Experiences.fetch((err, experiences) => {
         if(err){console.error(err)}
-        return experiences
+        return experiences || [];
     });
     const projectsData = await Projects.fetch((err, projects) => {
         if(err){console.error(err)}
-        return projects
+        return projects || [];
     });
     await ctx.render('index', {
         title: '关于我 About Me',
