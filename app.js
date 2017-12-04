@@ -10,14 +10,21 @@ const path = require('path');
 const routesConfig = require('./routesConfig');
 const mongoose = require('mongoose');
 
+// Using `mongoose.connect`...
 // connect db 
-const dbUrl = 'mongodb://localhost/resume'
-mongoose.connect(dbUrl)
-var db = mongoose.connection
-db.on('error', console.error.bind(console, '连接错误:'));
-db.once('open', function () {
-  console.log('连接成功');
+const dbUrl = 'mongodb://localhost/resume';
+mongoose.Promise = global.Promise;  // 防止警告
+const promise = mongoose.connect(dbUrl, {
+  useMongoClient: true,
+  /* other options */
+});
+promise.then(db => {
+  db.on('error', console.error.bind(console, '连接错误:'));
+  db.once('open', function () {
+    console.log('连接成功');
+  })
 })
+
 // error handler
 onerror(app)
 
