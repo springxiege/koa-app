@@ -40,8 +40,12 @@ app.use(session({
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
-app.use(json())
-app.use(logger())
+app.use(json());
+if ('development' === app.env){
+  app.use(logger(':method :url :status'));
+  mongoose.set('debug', true);
+}
+
 app.use(require('koa-static')(__dirname + '/public'))
 app.use(koaNunjucks({
   ext: 'html',

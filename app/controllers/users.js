@@ -43,7 +43,7 @@ exports.list = async (ctx, next) => {
         if(error) console.log(error);
         return users || [];
     })
-    await ctx.render('adminlist', {
+    await ctx.render('admin/adminlist', {
         title: '用户列表',
         users,
         moment
