@@ -1,5 +1,7 @@
 const Koa = require('koa')
 const app = new Koa()
+const session = require("koa-session2");
+const Store = require("koa-session2/libs/store");
 // const views = require('koa-views')
 const koaNunjucks = require('koa-nunjucks-2')
 const json = require('koa-json')
@@ -27,7 +29,13 @@ promise.then(db => {
 
 // error handler
 onerror(app)
-
+app.use(session({
+  secret: 'blacklove',
+  store: new Store({
+    url: dbUrl,
+    collection: 'sessions'
+  })
+}));
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
@@ -54,6 +62,13 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
+app.use(async (ctx, next) => {
+  const user = ctx.session.user;
+  if(user){
+    ctx.state.user = user;
+  }
+  await next();
+})
 // routes
 routesConfig(app);
 

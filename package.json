@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "debug": "^2.6.3",
     "koa": "^2.2.0",
     "koa-bodyparser": "^3.2.0",
@@ -18,8 +19,10 @@
     "koa-nunjucks-2": "^3.0.2",
     "koa-onerror": "^1.2.1",
     "koa-router": "^7.1.1",
+    "koa-session2": "^2.2.5",
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
+    "moment": "^2.19.3",
     "mongoose": "^4.13.6"
   },
   "devDependencies": {
