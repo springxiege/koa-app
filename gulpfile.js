@@ -11,8 +11,8 @@ gulp.task('start', () => {
             'node_modules/',
             'package.json'
         ],
-        ext: 'js html',
-        watch: ['/app/**', './public/**']
+        ext: 'js html less css',
+        watch: ['/app/**', '/public/**']
     })
     stream.on('restart', () => {
         console.log('restarted')
