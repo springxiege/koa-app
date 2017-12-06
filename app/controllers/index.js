@@ -5,8 +5,6 @@ const Experiences = require('../modals/experiences');
 const Projects = require('../modals/projects');
 
 exports.index = async (ctx, next) => {
-    console.log('session:')
-    console.log(ctx.session)
     const homepagesData = await Homepages.fetch(function (err, homepages) {
         if (err) {
             console.log(err)
@@ -27,11 +25,7 @@ exports.index = async (ctx, next) => {
         if(err){console.error(err)}
         return projects || [];
     });
-    const user = ctx.session.user;
-    if(user){
-        ctx.state.user = user;
-    }
-    await ctx.render('index', {
+    await ctx.render('home/index', {
         title: '关于我 About Me',
         advantage: advantageData,
         homepages: homepagesData,

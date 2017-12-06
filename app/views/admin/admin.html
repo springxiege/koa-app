@@ -16,7 +16,71 @@
         </ul>
     </div>
     <div class="col-md-9">
-        
+        <h3>我的优势</h3>
+        <div>
+            <ol>
+                {% for item in advantage -%}
+                <li>{{item.text}}</li>
+                {%- else %}
+                <li>暂未填写</li>
+                {% endfor %}
+            </ol>
+            <div>
+                <a href="#" class="btn btn-primary">添加</a>
+            </div>
+        </div>
+        <h3>社交主页</h3>
+        <div>
+            <ul>
+                {% for item in homepages -%}
+                <li>
+                    <a href="{{item.url}}" target="_blank">{{item.title or item.url}}</a>
+                </li>
+                {%- else %}
+                <li>暂未填写</li>
+                {% endfor %}
+            </ul>
+            <div>
+                <a href="#" class="btn btn-primary">添加</a>
+            </div>
+        </div>
+        <h3>工作经历</h3>
+        <div>
+            <ol>
+                {% for item in experiences -%}
+                <li data-content="{{item.content}}">{{item.title}}
+                    <small>{{ item.stayed }}</small>
+                </li>
+                {%- else %}
+                <li>暂未填写</li>
+                {% endfor %}
+            </ol>
+            <div>
+                <a href="#" class="btn btn-primary">添加</a>
+            </div>
+        </div>
+        <h3>项目经验</h3>
+        <div>
+            <ul>
+                {% for item in projects -%}
+                <li>{{item.title}}</li>
+                {%- else %}
+                <li>暂未填写</li>
+                {% endfor %}
+            </ul>
+            <div>
+                <a href="#" class="btn btn-primary">添加</a>
+            </div>
+        </div>
+        <h3>教育经历</h3>
+        <div>
+            <ul>
+                <li>武汉职业技术学院——大专</li>
+            </ul>
+            <div>
+                <a href="#" class="btn btn-primary">添加</a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

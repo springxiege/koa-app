@@ -38,14 +38,3 @@ exports.logout = async (ctx, next) => {
     await ctx.redirect('/');
 }
 
-exports.list = async (ctx, next) => {
-    const users = await User.fetch((error, users) => {
-        if(error) console.log(error);
-        return users || [];
-    })
-    await ctx.render('admin/adminlist', {
-        title: '用户列表',
-        users,
-        moment
-    })
-}
