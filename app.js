@@ -1,7 +1,7 @@
 const Koa = require('koa')
 const app = new Koa()
-const session = require("koa-session2");
-const Store = require("koa-session2/libs/store");
+const session = require("koa-session");
+// const Store = require("koa-session2/libs/store");
 // const views = require('koa-views')
 const koaNunjucks = require('koa-nunjucks-2')
 const json = require('koa-json')
@@ -29,13 +29,13 @@ promise.then(db => {
 
 // error handler
 onerror(app)
+app.keys = ['blacklove'];
 app.use(session({
-  secret: 'blacklove',
-  store: new Store({
-    url: dbUrl,
-    collection: 'sessions'
-  })
-}));
+  key: 'koa:sess',
+  httpOnly: true,
+  signed: true,
+  rolling: true
+}, app));
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
@@ -65,9 +65,10 @@ app.use(async (ctx, next) => {
   const ms = new Date() - start
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
-
+// auth user and add path to state
 app.use(async (ctx, next) => {
   const user = ctx.session.user;
+  ctx.state.path = ctx.path;
   if(user){
     ctx.state.user = user;
   }
