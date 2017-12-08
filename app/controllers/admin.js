@@ -4,7 +4,16 @@ const Experiences = require('../modals/experiences');
 const Projects = require('../modals/projects');
 const User = require('../modals/users');
 const moment = require('moment')
+
+// the center of admin
 exports.index = async (ctx, next) => {
+    await ctx.render('admin/index', {
+        title: 'Admin Center'
+    })
+}
+
+// resume
+exports.resume = async (ctx, next) => {
     const homepagesData = await Homepages.fetch(function (err, homepages) {
         if (err) {
             console.log(err)
@@ -25,7 +34,7 @@ exports.index = async (ctx, next) => {
         if (err) { console.error(err) }
         return projects || [];
     });
-    await ctx.render('admin/admin', {
+    await ctx.render('admin/resume', {
         title: '后台管理',
         advantage: advantageData,
         homepages: homepagesData,
@@ -34,6 +43,7 @@ exports.index = async (ctx, next) => {
     })
 }
 
+// user list
 exports.users = async (ctx, next) => {
     const users = await User.fetch((error, users) => {
         if (error) console.log(error);
@@ -44,4 +54,39 @@ exports.users = async (ctx, next) => {
         users,
         moment
     })
+}
+
+// delete the user
+exports.deleteUser = async (ctx, next) => {
+    const id = ctx.params.id;
+    await User.remove({_id: id}, (error, user) => {
+        if(error){
+            console.log(error);
+            ctx.body = {
+                success: false
+            }
+        }else {
+            ctx.body = {
+                success: true
+            }
+        }
+    })
+}
+
+// blogs
+exports.blogs = async (ctx, next) => {
+    await ctx.render('admin/blogs', {
+        title: 'Blog System'
+    })
+}
+
+// midwire for verify the role of users
+exports.auth = async (ctx, next) => {
+    const user = await ctx.state.user;
+
+    if(user && user.role > 50){
+        await next()
+    }else {
+        ctx.redirect('/')
+    }
 }

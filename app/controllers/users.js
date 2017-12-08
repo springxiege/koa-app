@@ -8,11 +8,12 @@ exports.signin = async (ctx, next) => {
         return user;
     });
     if(!$user) {
-        await ctx.redirect('/admin/list')
+        await ctx.redirect('/admin/users')
     }
     const match = await $user.comparePassword(password);
     if (!match) {
         console.log('password is not matched')
+        await ctx.redirect('/')
     } else {
         ctx.session.user = $user;
         await ctx.redirect('/')
@@ -29,7 +30,7 @@ exports.signup = async (ctx, next) => {
         if(error) console.log(error);
         return next();
     });
-    await ctx.redirect('/users/list')
+    await ctx.redirect('/admin/users')
 }
 
 exports.logout = async (ctx, next) => {

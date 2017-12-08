@@ -6,6 +6,7 @@
         <tr>
             <th>名字</th>
             <th>时间</th>
+            <th>权限权重</th>
             <th>操作</th>
         </tr>
     </thead>
@@ -14,7 +15,8 @@
         <tr>
             <td>{{item.name}}</td>
             <td>{{moment(item.meta.createAt).format('YYYY-MM-DD HH:mm:ss')}}</td>
-            <td><button class="btn btn-danger">删除</button></td>
+            <td>{{item.role}}</td>
+            <td><button class="btn btn-danger j-delete-user" data-id="{{item._id}}">删除</button></td>
         </tr>
         {% else %}
         <tr>
@@ -24,4 +26,26 @@
     </tbody>
 </table>
 {% endblock %}
-{% block js %}{% endblock%}
+{% block js %}
+<script>
+    $(function(){
+        $('.j-delete-user').click(function(){
+            var $this = $(this);
+            var id = $(this).data('id');
+            $.ajax({
+                url: '/admin/users/' + id,
+                method: 'DELETE'
+            })
+            .done(function(data){
+                console.log(data)
+                if(data.success){
+                    $this.closest('tr').remove();
+                }
+            })
+            .error(function(error){
+                console.log(error)
+            })
+        })
+    })
+</script>
+{% endblock%}

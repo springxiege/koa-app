@@ -22,10 +22,10 @@ gulp.task('start', () => {
         // restart the server in 3 seconds
         stream.emit('restart', 3)
     });
-    gulp.watch('./app/**/*', () => {
+    gulp.watch('./app/**', () => {
         stream.emit('restart',1);
     });
-    gulp.watch('./public/**/*', () => {
+    gulp.watch('./public/**', () => {
         stream.emit('restart', 1);
     })
     

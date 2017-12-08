@@ -1,0 +1,24 @@
+{% extends 'layout.html' %} 
+{% block css %}
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %} 
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="admin-list">
+            <a href="/admin/blogs"><i class="fa fa-address-book-o" aria-hidden="true"></i>&ensp;我的博客</a>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="admin-list">
+            <a href="/admin/resume"><i class="fa fa-id-card-o" aria-hidden="true"></i>&ensp;我的简历</a>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="admin-list">
+            <a href="/admin/users"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&ensp;用户列表</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
+{% block js %}{% endblock %}
