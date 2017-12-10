@@ -1,0 +1,372 @@
+@width: 950px;
+@navsideWidth: 210px;
+@contentWidth: 730px;
+@bodyColor: #464646;
+@bodyBgColor: #E0CB89;
+@primaryColor: #5B4328;
+
+body {
+    color: @bodyColor;
+    background-color: @bodyBgColor;
+    font-size: 12px;
+}
+
+a, a:hover {
+    color: @primaryColor;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    display: block;
+    width: 100%;
+    height: 0;
+    content: '';
+    clear: both;
+    visibility: hidden;
+}
+
+.bsb {
+    box-sizing: border-box;
+}
+
+.blacka,
+.blackb {
+    width: 100%;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    clear: both;
+}
+
+.blacka {
+    background-position: center bottom;
+    background-image: url('../images/sinabloga.jpg');
+}
+
+.blackb {
+    background-position: center top;
+    background-image: url('../images/sinablogb.jpg');
+}
+
+.blackheader,
+.blackbody,
+.blackfooter {
+    width: @width;
+    clear: both;
+    margin: 0 auto;
+}
+
+.blackheader {
+    height: 265px;
+    position: relative;
+    z-index: 100;
+
+    .blackheaderarea {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .blackheadertitle {
+            position: absolute;
+            left: 107px;
+            top: 38%;
+
+            h1 {
+                font-family: "微软雅黑","黑体";
+                font-size: 24px;
+                color: @primaryColor;
+                font-weight: 300;
+            }
+        }
+
+        .blackmenu {
+            position: absolute;
+            width: 290px;
+            height: 36px;
+            left: 90px;
+            top: 61%;
+
+            &::before {
+                display: block;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-image: url('../images/blognavbg.png');
+                background-repeat: no-repeat;
+                background-position: left top;
+            }
+
+            .blackmenuinfo {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                height: 16px;
+
+                span {
+                    float: left;
+                    font-size: 14px;
+                    overflow: hidden;
+                    padding: 0 13px;
+                    background-image: url('../images/sg_newsp.png');
+                    background-repeat: no-repeat;
+                    background-position: right -240px;
+
+                    &:last-of-type {
+                        background-image: none;
+                    }
+
+                    a.on {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.blackfooter {
+    height: 265px;
+    padding-top: 110px;
+    text-align: center;
+    font-size: 12px;
+    font-family: Verdana,"宋体",sans-serif;
+    .bsb;
+    
+    > p {
+        line-height: 22px;
+    }
+
+    a {
+        color: #675D3F;
+
+        &:hover {
+            color: #675D3F
+        }
+    }
+}
+
+.blacknavside {
+    width: @navsideWidth;
+
+    .blacknavitem {
+        clear: both;
+        margin-bottom: 10px;
+        text-align: left;
+        overflow: hidden;
+        width: auto;
+        height: 100%;
+
+        .blacknavheader {
+            height: 26px;
+            font-family: "宋体",sans-serif;
+            overflow: hidden;
+            background-image: url('../images/modelhead.png');
+            background-position: 210px 0;
+
+            span {
+                float: left;
+                padding-left: 10px;
+                padding-top: 8px;
+                font-weight: 700;
+                color: #876028
+            }
+        }
+
+        .blacknavbody {
+            color: @bodyColor;
+            padding: 10px;
+            background-image: url('../images/modelbody.png');
+            background-position: 210px 0;
+
+            .blacknavbodyinfo {
+                clear: both;
+                zoom: 1;
+                height: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .blacknavlist {
+                padding: 10px;
+                zoom: 1;
+                clear: both;
+                
+                em {
+                    font-style: normal;
+                    margin-left: 3px;
+                    font-size: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #B09877;
+                }
+
+                ul {
+                    
+                    li {
+                        clear: both;
+                        font-family: "宋体";
+                        padding-left: 8px;
+                        line-height: 21px;
+                        font-size: 12px;
+                        background-position: left 8px;
+                        background-image: url('../images/SG_dot.gif');
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            visibility: visible;
+            height: 1px;
+            overflow: hidden;
+            background-image: url('../images/modelfoot.png');
+            background-position: 210px 0;
+        }
+    }
+}
+
+.blackcontent {
+    width: @contentWidth;
+
+    .blackmain {
+        clear: both;
+        margin: 0 0 10px;
+        text-align: left;
+        overflow: hidden;
+        width: auto;
+        height: 100%;
+
+        .blackmainheader {
+            height: 26px;
+            overflow: hidden;
+            background-image: url('../images/modelhead.png');
+            background-position: 1450px 0;
+            font-family: "宋体", sans-serif;
+
+            span {
+                float: left;
+                padding-left: 10px;
+                padding-top: 8px;
+                font-weight: 700;
+                color: #876028;
+            }
+        }
+
+        .blackmainbody {
+            background-image: url('../images/modelbody.png');
+            background-position: 1450px 0;
+
+            .blackmainlist {
+                padding: 0 20px 40px;
+                clear: both;
+                overflow: hidden;
+                font-family: "宋体";
+                zoom: 1;
+                text-align: left;
+                color: #464646;
+
+                .blackmainitem {
+                    
+                    .blogtitle {
+                        padding: 26px 0 10px;
+
+                        .blogtitletext {
+                            font-size: 18px;
+                            font-family: "微软雅黑", "黑体";
+                            display: inline;
+                            font-weight: 300;
+                        }
+
+                        small {
+                            color: #B09877
+                        }
+                    }
+
+                    .blogtags {
+                        height: 22px;
+                        line-height: 20px;
+                        word-break: break-all;
+                        clear: both;
+
+                        .blogtagsitem {
+                            display: inline;
+                            padding-right: 10px;
+
+                            a {
+                                padding-right: 3px;
+                            }
+                        }
+
+                        em {
+                            color: #B09877;
+                            font-style: normal;
+                        }
+                    }
+
+                    .blogcontent {
+                        position: relative;
+                        font-size: 14px;
+                        clear: both;
+                        overflow: hidden;
+                        margin-bottom: 24px;
+                        padding-top: 20px;
+                        word-break: break-all;
+                        word-wrap: break-word;
+                        line-height: 150%;
+                    }
+
+                    .tagmore {
+                        clear: both;
+                        height: 15px;
+                        padding: 10px 0 19px;
+                        box-sizing: content-box;
+                    }
+                    
+                    &::after {
+                        display: block;
+                        height: 1px;
+                        content: '';
+                        visibility: visible;
+                        clear: both;
+                        overflow: hidden;
+                        background-image: url('../images/SG_linedot.gif');
+                        background-repeat: repeat-x;
+                    }
+                }
+            }
+
+            .blackpages {
+                padding-top: 20px;
+                height: 21px;
+                line-height: 21px;
+                overflow: hidden;
+                box-sizing: content-box;
+
+                ul {
+                    height: 100%;
+
+                    li {
+                        float: left;
+                        height: 100%;
+                        margin: 0 2px;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

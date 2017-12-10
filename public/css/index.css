@@ -1,0 +1,307 @@
+body {
+  color: #464646;
+  background-color: #E0CB89;
+  font-size: 12px;
+}
+a,
+a:hover {
+  color: #5B4328;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix::after {
+  display: block;
+  width: 100%;
+  height: 0;
+  content: '';
+  clear: both;
+  visibility: hidden;
+}
+.bsb {
+  box-sizing: border-box;
+}
+.blacka,
+.blackb {
+  width: 100%;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: auto;
+  clear: both;
+}
+.blacka {
+  background-position: center bottom;
+  background-image: url('../images/sinabloga.jpg');
+}
+.blackb {
+  background-position: center top;
+  background-image: url('../images/sinablogb.jpg');
+}
+.blackheader,
+.blackbody,
+.blackfooter {
+  width: 950px;
+  clear: both;
+  margin: 0 auto;
+}
+.blackheader {
+  height: 265px;
+  position: relative;
+  z-index: 100;
+}
+.blackheader .blackheaderarea {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.blackheader .blackheaderarea .blackheadertitle {
+  position: absolute;
+  left: 107px;
+  top: 38%;
+}
+.blackheader .blackheaderarea .blackheadertitle h1 {
+  font-family: "微软雅黑", "黑体";
+  font-size: 24px;
+  color: #5B4328;
+  font-weight: 300;
+}
+.blackheader .blackheaderarea .blackmenu {
+  position: absolute;
+  width: 290px;
+  height: 36px;
+  left: 90px;
+  top: 61%;
+}
+.blackheader .blackheaderarea .blackmenu::before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/blognavbg.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.blackheader .blackheaderarea .blackmenu .blackmenuinfo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 16px;
+}
+.blackheader .blackheaderarea .blackmenu .blackmenuinfo span {
+  float: left;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 0 13px;
+  background-image: url('../images/sg_newsp.png');
+  background-repeat: no-repeat;
+  background-position: right -240px;
+}
+.blackheader .blackheaderarea .blackmenu .blackmenuinfo span:last-of-type {
+  background-image: none;
+}
+.blackheader .blackheaderarea .blackmenu .blackmenuinfo span a.on {
+  font-weight: 700;
+}
+.blackfooter {
+  height: 265px;
+  padding-top: 110px;
+  text-align: center;
+  font-size: 12px;
+  font-family: Verdana, "宋体", sans-serif;
+  box-sizing: border-box;
+}
+.blackfooter > p {
+  line-height: 22px;
+}
+.blackfooter a {
+  color: #675D3F;
+}
+.blackfooter a:hover {
+  color: #675D3F;
+}
+.blacknavside {
+  width: 210px;
+}
+.blacknavside .blacknavitem {
+  clear: both;
+  margin-bottom: 10px;
+  text-align: left;
+  overflow: hidden;
+  width: auto;
+  height: 100%;
+}
+.blacknavside .blacknavitem .blacknavheader {
+  height: 26px;
+  font-family: "宋体", sans-serif;
+  overflow: hidden;
+  background-image: url('../images/modelhead.png');
+  background-position: 210px 0;
+}
+.blacknavside .blacknavitem .blacknavheader span {
+  float: left;
+  padding-left: 10px;
+  padding-top: 8px;
+  font-weight: 700;
+  color: #876028;
+}
+.blacknavside .blacknavitem .blacknavbody {
+  color: #464646;
+  padding: 10px;
+  background-image: url('../images/modelbody.png');
+  background-position: 210px 0;
+}
+.blacknavside .blacknavitem .blacknavbody .blacknavbodyinfo {
+  clear: both;
+  zoom: 1;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.blacknavside .blacknavitem .blacknavbody .blacknavlist {
+  padding: 10px;
+  zoom: 1;
+  clear: both;
+}
+.blacknavside .blacknavitem .blacknavbody .blacknavlist em {
+  font-style: normal;
+  margin-left: 3px;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #B09877;
+}
+.blacknavside .blacknavitem .blacknavbody .blacknavlist ul li {
+  clear: both;
+  font-family: "宋体";
+  padding-left: 8px;
+  line-height: 21px;
+  font-size: 12px;
+  background-position: left 8px;
+  background-image: url('../images/SG_dot.gif');
+  background-repeat: no-repeat;
+}
+.blacknavside .blacknavitem::after {
+  display: block;
+  content: '';
+  visibility: visible;
+  height: 1px;
+  overflow: hidden;
+  background-image: url('../images/modelfoot.png');
+  background-position: 210px 0;
+}
+.blackcontent {
+  width: 730px;
+}
+.blackcontent .blackmain {
+  clear: both;
+  margin: 0 0 10px;
+  text-align: left;
+  overflow: hidden;
+  width: auto;
+  height: 100%;
+}
+.blackcontent .blackmain .blackmainheader {
+  height: 26px;
+  overflow: hidden;
+  background-image: url('../images/modelhead.png');
+  background-position: 1450px 0;
+  font-family: "宋体", sans-serif;
+}
+.blackcontent .blackmain .blackmainheader span {
+  float: left;
+  padding-left: 10px;
+  padding-top: 8px;
+  font-weight: 700;
+  color: #876028;
+}
+.blackcontent .blackmain .blackmainbody {
+  background-image: url('../images/modelbody.png');
+  background-position: 1450px 0;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist {
+  padding: 0 20px 40px;
+  clear: both;
+  overflow: hidden;
+  font-family: "宋体";
+  zoom: 1;
+  text-align: left;
+  color: #464646;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogtitle {
+  padding: 26px 0 10px;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogtitle .blogtitletext {
+  font-size: 18px;
+  font-family: "微软雅黑", "黑体";
+  display: inline;
+  font-weight: 300;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogtitle small {
+  color: #B09877;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogtags {
+  height: 22px;
+  line-height: 20px;
+  word-break: break-all;
+  clear: both;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogtags .blogtagsitem {
+  display: inline;
+  padding-right: 10px;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogtags .blogtagsitem a {
+  padding-right: 3px;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogtags em {
+  color: #B09877;
+  font-style: normal;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .blogcontent {
+  position: relative;
+  font-size: 14px;
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 24px;
+  padding-top: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  line-height: 150%;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem .tagmore {
+  clear: both;
+  height: 15px;
+  padding: 10px 0 19px;
+  box-sizing: content-box;
+}
+.blackcontent .blackmain .blackmainbody .blackmainlist .blackmainitem::after {
+  display: block;
+  height: 1px;
+  content: '';
+  visibility: visible;
+  clear: both;
+  overflow: hidden;
+  background-image: url('../images/SG_linedot.gif');
+  background-repeat: repeat-x;
+}
+.blackcontent .blackmain .blackmainbody .blackpages {
+  padding-top: 20px;
+  height: 21px;
+  line-height: 21px;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+.blackcontent .blackmain .blackmainbody .blackpages ul {
+  height: 100%;
+}
+.blackcontent .blackmain .blackmainbody .blackpages ul li {
+  float: left;
+  height: 100%;
+  margin: 0 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}

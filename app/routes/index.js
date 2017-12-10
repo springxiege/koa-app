@@ -3,6 +3,8 @@ const Index = require('../controllers/index');
 
 router.get('/', Index.index)
 
+router.get('/resume', Index.resume)
+
 router.get('/string', Index.string)
 
 router.get('/json', Index.json)

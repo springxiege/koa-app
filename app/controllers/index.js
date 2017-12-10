@@ -4,7 +4,13 @@ const Advantage = require('../modals/advantage');
 const Experiences = require('../modals/experiences');
 const Projects = require('../modals/projects');
 
-exports.index = async (ctx, next) => {
+exports.index = async (ctx ,next) => {
+    await ctx.render('home/index', {
+        title: '首页'
+    })
+}
+
+exports.resume = async (ctx, next) => {
     const homepagesData = await Homepages.fetch(function (err, homepages) {
         if (err) {
             console.log(err)
@@ -25,7 +31,7 @@ exports.index = async (ctx, next) => {
         if(err){console.error(err)}
         return projects || [];
     });
-    await ctx.render('home/index', {
+    await ctx.render('home/resume', {
         title: '关于我 About Me',
         advantage: advantageData,
         homepages: homepagesData,

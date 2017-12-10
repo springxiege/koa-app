@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <div class="blacka">
+        <div class="blackb">
+            <div class="blackheader">
+                <div class="blackheaderarea">
+                    <div class="blackheadertitle">
+                        <h1><a href="/">BlackPlume的博客</a></h1>
+                        <div class="blacklink">
+                            <a href="/">http://www.black.cn</a>
+                        </div>
+                    </div>
+                    <div class="blackmenu">
+                        <div class="blackmenuinfo">
+                            <span><a href="/" class="on">首页</a></span>
+                            <span><a href="/">博文目录</a></span>
+                            <span><a href="/">图片</a></span>
+                            <span><a href="/">关于我</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blackbody clearfix">
+                <div class="blacknavside fl">
+                    <div class="blacknavitem">
+                        <div class="blacknavheader">
+                            <span>个人简介</span>
+                        </div>
+                        <div class="blacknavbody">
+                            <div class="blacknavbodyinfo">
+                                我是性格较开朗的男孩
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blacknavitem">
+                        <div class="blacknavheader">
+                            <span>分类</span>
+                        </div>
+                        <div class="blacknavbody">
+                            <div class="blacknavlist">
+                                <ul>
+                                    <li>
+                                        <a href="/">全部博文</a>
+                                        <em>(112)</em>
+                                    </li>
+                                    <li>
+                                        <a href="/">图片</a>
+                                        <em>(34)</em>
+                                    </li>
+                                    <li>
+                                        <a href="/">日记</a>
+                                        <em>(56)</em>
+                                    </li>
+                                    <li>
+                                        <a href="/">关于我</a>
+                                        <em>(89)</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% block navside %}{% endblock %}
+                </div>
+                <div class="blackcontent fr">
+                    <div class="blackmain">
+                        <div class="blackmainheader">
+                            <span>博文</span>
+                        </div>
+                        <div class="blackmainbody">
+                            {% block content %}{% endblock %}
+                        </div>
+                        <div class="blackmainfooter"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="blackfooter">
+                <p>Copyright © 2017 - 2017 blacklove.cn Corporation, All Rights Reserved</p>
+                <p>BlackPlume 版权所有</p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery-1.12.4/jquery.min.js"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

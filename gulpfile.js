@@ -1,5 +1,13 @@
 var gulp = require('gulp');
-var nodemon = require('gulp-nodemon')
+var nodemon = require('gulp-nodemon');
+var less = require('gulp-less');
+gulp.task('less', function () {
+    gulp.src('./public/css/*.less')
+        .pipe(less())
+        .pipe(gulp.dest(function (f) {
+            return f.base;
+        }))
+});
 gulp.task('start', () => {
     var stream = nodemon({
         script: 'bin/www',
@@ -21,11 +29,13 @@ gulp.task('start', () => {
         console.error('Application has crashed!\n');
         // restart the server in 3 seconds
         stream.emit('restart', 3)
+
     });
-    gulp.watch('./app/**', () => {
+    gulp.watch('./app/**', (files) => {
         stream.emit('restart',1);
     });
-    gulp.watch('./public/**', () => {
+    gulp.watch('./public/**', ['less'], (files) => {
+        // console.log('public->', files)
         stream.emit('restart', 1);
     })
     
