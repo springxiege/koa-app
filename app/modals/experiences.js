@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
 var ExperiencesSchema = require('../schemas/experiences')
-var Experiences = mongoose.model('Experiences', ExperiencesSchema, 'experiences')
+var Experience = mongoose.model('Experience', ExperiencesSchema)
 
-module.exports = Experiences
+module.exports = Experience
