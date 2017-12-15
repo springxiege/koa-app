@@ -69,12 +69,39 @@
                             </div>
                         </div>
                     </div>
+                    <div class="blacknavitem">
+                        <div class="blacknavheader">
+                            <span>归档</span>
+                        </div>
+                        <div class="blacknavbody">
+                            <div class="blacknavlist">
+                                <ul>
+                                    <li>
+                                        <a href="/">2012</a>
+                                        <em>(112)</em>
+                                    </li>
+                                    <li>
+                                        <a href="/">2013</a>
+                                        <em>(34)</em>
+                                    </li>
+                                    <li>
+                                        <a href="/">2014</a>
+                                        <em>(56)</em>
+                                    </li>
+                                    <li>
+                                        <a href="/">2015</a>
+                                        <em>(89)</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     {% block navside %}{% endblock %}
                 </div>
                 <div class="blackcontent fr">
                     <div class="blackmain">
                         <div class="blackmainheader">
-                            <span>博文</span>
+                            <span>{{title}}</span>
                         </div>
                         <div class="blackmainbody">
                             {% block content %}{% endblock %}

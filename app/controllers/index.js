@@ -10,6 +10,18 @@ exports.index = async (ctx ,next) => {
     })
 }
 
+exports.list = async (ctx, next) => {
+    await ctx.render('home/list', {
+        title: '列表'
+    })
+}
+
+exports.detail = async (ctx, next) => {
+    await ctx.render('home/detail', {
+        title: '详情页'
+    })
+}
+
 exports.resume = async (ctx, next) => {
     const homepagesData = await Homepages.fetch(function (err, homepages) {
         if (err) {

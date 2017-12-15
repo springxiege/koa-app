@@ -3,6 +3,10 @@ const Index = require('../controllers/index');
 
 router.get('/', Index.index)
 
+router.get('/list', Index.list)
+
+router.get('/detail/:id', Index.detail)
+
 router.get('/resume', Index.resume)
 
 router.get('/string', Index.string)
