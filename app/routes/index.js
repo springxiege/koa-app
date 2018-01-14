@@ -7,6 +7,10 @@ router.get('/list', Index.list)
 
 router.get('/detail/:id', Index.detail)
 
+router.get('/about', Index.about)
+
+router.get('/photos', Index.photos)
+
 router.get('/resume', Index.resume)
 
 router.get('/string', Index.string)

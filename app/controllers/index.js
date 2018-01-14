@@ -22,6 +22,18 @@ exports.detail = async (ctx, next) => {
     })
 }
 
+exports.about = async (ctx, next) => {
+    await ctx.render('home/about', {
+        title: '关于我'
+    })
+}
+
+exports.photos = async (ctx ,next) => {
+    await ctx.render('home/photos', {
+        title: '相册'
+    })
+}
+
 exports.resume = async (ctx, next) => {
     const homepagesData = await Homepages.fetch(function (err, homepages) {
         if (err) {
