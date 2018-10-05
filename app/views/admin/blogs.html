@@ -3,8 +3,30 @@
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
 {% endblock %} 
 {% block content %}
-<div class="row">
-    博客后台
+<div class="blog clearfix">
+    <div class="blog-sidebar pull-left" style="width: 200px">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active">
+                <a href="#">My Blogs</a>
+            </li>
+            <li role="presentation">
+                <a href="#">Sorts</a>
+            </li>
+            <li role="presentation">
+                <a href="#">Drafs</a>
+            </li>
+        </ul>
+    </div>
+    <div class="blog-container" style="padding-left: 220px">
+        <ul class="list-group">
+            <li class="list-group-item">1i</li>
+            <li class="list-group-item">2i</li>
+            <li class="list-group-item">3i</li>
+            <li class="list-group-item">4i</li>
+            <li class="list-group-item">5i</li>
+            <li class="list-group-item">6i</li>
+        </ul>
+    </div>
 </div>
 {% endblock %} 
 {% block js %}{% endblock %}

@@ -34,6 +34,12 @@ exports.photos = async (ctx ,next) => {
     })
 }
 
+// exports.login = async (ctx, next) => {
+//     await ctx.render('home/login', {
+//         title: 'Sign In'
+//     })
+// }
+
 exports.resume = async (ctx, next) => {
     const homepagesData = await Homepages.fetch(function (err, homepages) {
         if (err) {

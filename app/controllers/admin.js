@@ -5,6 +5,13 @@ const Projects = require('../modals/projects');
 const User = require('../modals/users');
 const moment = require('moment')
 
+// sign in
+exports.signin = async (ctx, next) => {
+    await ctx.render('admin/signin', {
+        title: 'Sign In'
+    })
+}
+
 // the center of admin
 exports.index = async (ctx, next) => {
     await ctx.render('admin/index', {
@@ -83,7 +90,7 @@ exports.blogs = async (ctx, next) => {
 // midwire for verify the role of users
 exports.auth = async (ctx, next) => {
     const user = await ctx.state.user;
-
+    console.log(user)
     if(user && user.role > 50){
         await next()
     }else {

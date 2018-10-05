@@ -11,6 +11,8 @@ router.get('/about', Index.about)
 
 router.get('/photos', Index.photos)
 
+// router.get('/signin', Index.login)
+
 router.get('/resume', Index.resume)
 
 router.get('/string', Index.string)
